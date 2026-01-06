@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shankar Enterprises | Construction Materials</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content container">
+            <div class="logo" onclick="app.showHome()">
+                <h1>Shankar Enterprises</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search construction materials..." oninput="app.handleSearch(this.value)">
+                <button type="button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <div id="auth-buttons">
+                    <!-- Dynamic Login/Logout buttons -->
+                </div>
+                <div class="cart-icon" onclick="app.showCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="category-nav">
+        <div class="container nav-links">
+            <a href="#" onclick="app.filterCategory('All')">All</a>
+            <a href="#" onclick="app.filterCategory('Rod')">Rod</a>
+            <a href="#" onclick="app.filterCategory('Cement')">Cement</a>
+            <a href="#" onclick="app.filterCategory('Wood')">Wood</a>
+            <a href="#" onclick="app.filterCategory('Chips')">Chips</a>
+            <a href="#" onclick="app.filterCategory('Sand')">Sand</a>
+            <a href="#" onclick="app.filterCategory('Brick')">Brick</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main id="view-container" class="container">
+        <!-- Views will be injected here -->
+    </main>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="app.closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
